@@ -1,4 +1,6 @@
 from django.db import models
+from operator import mod
+from pyexpat import model
 
 # Create your models here.
 
@@ -17,13 +19,13 @@ class Parroquia(models.Model):
 
 
 class  Barrio(models.Model):
-    numero_par =((1,'1'),(2,'2'),(3,'3'),(4,'4'),
+    numero_parq =((1,'1'),(2,'2'),(3,'3'),(4,'4'),
     (5,'5'),(6,'6'))
 
     nombre = models.CharField(max_length=30)
     numero_vivien = models.IntegerField('numero de viviendas')
     numero_par = models.IntegerField(
-    choices = numero_par)
+    choices = numero_parq)
     numero_edif = models.IntegerField('numero de edificios')
 
     parroquia = models.ForeignKey(Parroquia, on_delete=models.CASCADE,
@@ -32,5 +34,5 @@ class  Barrio(models.Model):
     def __str__(self):
         return "%s %d %d %d" % (self.nombre, 
                 self.numero_vivien,
-                self.numero_par,
+                self.numero_parq,
                 self.numero_edif)

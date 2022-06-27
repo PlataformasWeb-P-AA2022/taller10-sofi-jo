@@ -6,7 +6,6 @@ from ordenamiento.forms import *
 
 # Generar una vista que liste las parroquias y sus barrios
 def index(request):
-
     parroquias = Parroquia.objects.all()
 
     informacion_template = {'parroquias': parroquias, 'numero_parroquias':len(parroquias)}

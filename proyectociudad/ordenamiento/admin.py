@@ -10,7 +10,7 @@ class ParroquiaAdmin(admin.ModelAdmin):
 admin.site.register(Parroquia,ParroquiaAdmin)
 
 class BarrioAdmin(admin.ModelAdmin):
-    list_display = ('nombre','numero_vivien','numero_par','numero_edif','parroquia')
+    list_display = ('nombre','numero_vivien','numero_parq','numero_edif','parroquia')
     search_fields = ('num_par','parroquia')
 
 admin.site.register(Barrio,BarrioAdmin)
